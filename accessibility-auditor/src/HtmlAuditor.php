@@ -7,7 +7,6 @@ namespace AccessAudit;
 use DOMDocument;
 use DOMElement;
 use DOMXPath;
-use LibXMLError;
 
 final class HtmlAuditor
 {
@@ -30,8 +29,7 @@ final class HtmlAuditor
         $xpath = new DOMXPath($document);
         $findings = [];
 
-        $title = trim($xpath->evaluate('string(//title)'));
-        if ($title === '') {
+        if (trim($xpath->evaluate('string(//title)')) === '') {
             $findings[] = new AuditFinding(
                 'page-title-missing',
                 'error',
@@ -55,11 +53,7 @@ final class HtmlAuditor
         }
 
         foreach ($xpath->query('//img') as $image) {
-            if (!$image instanceof DOMElement) {
-                continue;
-            }
-
-            if (!$image->hasAttribute('alt')) {
+            if ($image instanceof DOMElement && !$image->hasAttribute('alt')) {
                 $findings[] = new AuditFinding(
                     'image-alt-missing',
                     'error',
@@ -112,8 +106,7 @@ final class HtmlAuditor
                 continue;
             }
 
-            $text = trim($interactive->textContent);
-            $hasName = $text !== ''
+            $hasName = trim($interactive->textContent) !== ''
                 || trim($interactive->getAttribute('aria-label')) !== ''
                 || trim($interactive->getAttribute('aria-labelledby')) !== ''
                 || trim($interactive->getAttribute('title')) !== '';
@@ -142,9 +135,10 @@ final class HtmlAuditor
 
         $id = $control->getAttribute('id');
         if ($id !== '') {
-            $labels = $xpath->query('//label[@for=' . $this->xpathLiteral($id) . ']');
-            if ($labels !== null && $labels->length > 0) {
-                return true;
+            foreach ($xpath->query('//label[@for]') as $label) {
+                if ($label instanceof DOMElement && $label->getAttribute('for') === $id) {
+                    return true;
+                }
             }
         }
 
@@ -173,21 +167,5 @@ final class HtmlAuditor
         }
 
         return $description;
-    }
-
-    private function xpathLiteral(string $value): string
-    {
-        if (!str_contains($value, "'")) {
-            return "'" . $value . "'";
-        }
-        if (!str_contains($value, '"')) {
-            return '"' . $value . '"';
-        }
-
-        $parts = explode("'", $value);
-        return 'concat(' . implode(', "'", ', array_map(
-            static fn (string $part): string => "'" . $part . "'",
-            $parts
-        )) . ')';
     }
 }

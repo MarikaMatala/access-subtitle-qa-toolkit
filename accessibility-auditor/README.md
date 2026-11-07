@@ -39,6 +39,6 @@ This is an early rule-based checker, not a complete WCAG audit. It does not curr
 - Add more robust accessible-name calculation.
 - Add fixtures for edge cases and malformed HTML.
 - Add rule metadata and severity documentation.
-- Build a browser-based interface after the audit engine is stable.
+- Connect the published browser demo to the PHP audit engine through a clearly defined and security-reviewed interface when the integration architecture is ready.
 
 See the root roadmap at ../docs/ROADMAP.md.

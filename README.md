@@ -70,6 +70,7 @@ The project combines automated regression tests with manual keyboard, magnificat
 - [Roadmap](docs/ROADMAP.md)
 - [Inclusive accessibility test plan](docs/ACCESSIBILITY_TEST_PLAN.md)
 - [Accessibility, usability and inclusion reference library (EN/FI)](docs/REFERENCE_LIBRARY.md)
+- [International accessibility laws and standards comparison (EN/FI)](docs/INTERNATIONAL_COMPARISON.md)
 - [Inclusive service design and equality (EN/FI)](docs/INCLUSIVE_SERVICE_DESIGN.md)
 - [Usability and inclusive UI design (EN/FI)](docs/USABILITY_AND_UI.md)
 - [Accessibility testing toolkit (EN/FI)](docs/TESTING_TOOLKIT.md)

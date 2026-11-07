@@ -109,9 +109,11 @@ Last reviewed: 2026-11-07
 - [x] Add Finnish and English interface text.
 - [ ] Add Playwright functional and keyboard tests.
 - [ ] Add axe-core automated scans for pages and dynamic states.
+- [x] Document design requirements for photosensitive epilepsy, light sensitivity and migraine, including avoidance of flashing, reduced motion, calm visual presentation and manual safety review.
 - [ ] Perform manual NVDA, VoiceOver and TalkBack checks.
 - [ ] Test 200% text resize and 400% zoom / 320 CSS px reflow.
 - [ ] Test text spacing, forced colors and reduced motion.
+- [ ] Manually verify that the interface contains no flashing/strobing effects, abrupt brightness changes, autoplaying motion or unnecessary animated status indicators; record browser and OS.
 - [ ] Measure text and non-text contrast.
 - [ ] Check keyboard focus visibility and focus order on desktop and mobile.
 - [ ] Check mobile layouts at narrow viewport widths.

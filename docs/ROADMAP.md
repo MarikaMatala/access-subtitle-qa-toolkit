@@ -17,7 +17,7 @@ Last reviewed: 2026-11-07
 - [x] Add regression tests for nested and multiple subtitle overlaps (5 Node.js tests pass locally).
 - [x] Verify that the GitHub Pages build and deployment workflow completed successfully for the latest browser-demo changes.
 - [x] Include both standalone subtitle parser scripts in the Pages deployment path filters.
-- [ ] Open the live demo and confirm in a browser that the deployed page loads the updated overlap detector and behaves correctly.
+- [!] Open the live demo and confirm in a real browser that the deployed page loads the updated overlap detector and behaves correctly. The available browser/web inspection in this session cannot access the GitHub Pages URL; this must be checked in a user browser before proceeding.
 - [x] Fix the GitHub Pages workflow path filters so changes to `subtitle-overlap.js` and `subtitle-vtt.js` trigger a deployment.
 
 ## Phase 1 — Repository foundation

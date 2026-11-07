@@ -3,19 +3,22 @@
 ## Phase 1 — Repository foundation
 - [x] Create repository and initial documentation.
 - [x] Define license and security guidance.
+- [x] Add inclusive accessibility test plan.
+- [x] Add UI test plan and regression strategy.
 - [ ] Add contribution guidelines.
-- [ ] Add CI workflows.
 
 ## Phase 2 — Accessibility Auditor (PHP)
-- [ ] Set up PHP project and test runner.
-- [ ] Define a consistent finding/report format.
-- [ ] Accept HTML from a local file or pasted input.
-- [ ] Check document title and language.
-- [ ] Check image alternative text.
-- [ ] Check heading hierarchy.
-- [ ] Check form labels.
-- [ ] Check empty links and buttons.
-- [ ] Add synthetic fixtures and automated tests.
+- [x] Set up PHP project and test runner.
+- [x] Define a consistent finding/report format.
+- [x] Check document title and language.
+- [x] Check image alternative text.
+- [x] Check heading hierarchy.
+- [x] Check form labels and common ARIA naming references.
+- [x] Check links and buttons for detectable accessible names.
+- [x] Add basic positive and negative regression tests.
+- [ ] Improve accessible-name computation and ARIA validation.
+- [ ] Add broader HTML fixtures and edge-case tests.
+- [ ] Add manual verification of auditor findings against screen readers.
 
 ## Phase 3 — Subtitle Toolkit (Java)
 - [ ] Set up Java project and test runner.
@@ -33,12 +36,21 @@
 - [ ] Keep original uploaded file contents out of the database by default.
 - [ ] Add integration tests.
 
-## Phase 5 — User interface and release
-- [ ] Build a responsive interface.
+## Phase 5 — User interface and testing
+- [ ] Build a semantic, responsive interface.
 - [ ] Add accessible result summaries and filters.
 - [ ] Add report export.
+- [ ] Add Playwright functional and keyboard tests.
+- [ ] Add axe-core automated scans for pages and dynamic states.
+- [ ] Perform manual NVDA, VoiceOver, and TalkBack checks.
+- [ ] Test 200% text resize, 400% zoom / 320 CSS px reflow, text spacing, forced colors, and reduced motion.
+- [ ] Measure text and non-text contrast.
+- [ ] Document test results and known limitations.
+
+## Phase 6 — Release
 - [ ] Document setup and usage in English and Finnish.
 - [ ] Add screenshots and a first release.
+- [ ] Complete accessibility release checklist.
 
 ## Out of scope for the first version
 - Claims of complete WCAG conformance.
@@ -46,3 +58,7 @@
 - Remote URL scanning before SSRF protections are designed and tested.
 - Cloud storage of uploaded files.
 - User accounts before they are demonstrably needed.
+
+## Current UI testing limitation
+
+The browser UI does not exist yet. The test plan is ready, but Playwright and assistive-technology tests must be connected to the real interface before any UI test can be reported as passing.

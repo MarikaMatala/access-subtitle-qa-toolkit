@@ -11,11 +11,13 @@ Automated checks can identify common issues, but cannot prove that a website is 
 
 ## Browser demo
 
-The static browser interface is prepared for GitHub Pages deployment:
+**Last updated / Viimeksi päivitetty:** 2026-11-07 15:20 (Europe/Helsinki)
+
+The static browser interface is published on GitHub Pages:
 
 **https://marikamatala.github.io/access-subtitle-qa-toolkit/**
 
-The intended public URL is shown below. To publish it, enable **Settings → Pages → Build and deployment → Source: GitHub Actions** in the repository; the included workflow then deploys the site automatically.\n\nThe demo currently includes:
+The public demo is deployed automatically with GitHub Actions whenever the browser interface files are updated.\n\nThe demo currently includes:
 - HTML checks for a missing page title, document language, image alternative text, skipped heading levels, form labels, and accessible names on links and buttons.
 - SRT / WebVTT checks for cue structure, timestamp validity, ordering, overlaps, empty cues, long lines, and basic timing statistics.
 - Built-in examples, local file selection, downloadable text reports, and English / Finnish interface language.
@@ -24,7 +26,7 @@ The intended public URL is shown below. To publish it, enable **Settings → Pag
 The browser implementation is a lightweight JavaScript demonstration. It does **not** execute the PHP CLI auditor or a production Java subtitle engine, and its rules are not a complete WCAG audit.
 
 ## Status
-**Early development.** The PHP command-line auditor is available as a separate module. The browser interface is a separate client-side demo; the Java subtitle module and database remain planned development work. The UI test plan describes further functional and accessibility testing still required.
+**Early development.** The PHP command-line auditor and its basic regression tests are available as a separate module. The browser interface is published as a client-side demo. The Java subtitle module and database remain planned development work. Functional, responsive, keyboard and assistive-technology testing of the browser interface is still required.
 
 ## Technology
 
@@ -112,6 +114,6 @@ Projekti sisältää kaksi erillistä työkalua:
 
 Saavutettavuuden tavoitteena on WCAG 2.2 AA. Testauksessa huomioidaan muun muassa sokeus, heikkonäköisyys ja silmäsairaudet, värinäön poikkeamat, lukivaikeus, kognitiiviset haasteet, motoriset rajoitteet sekä ruudunlukijoiden ja muiden avustavien teknologioiden käyttö.
 
-Testaus yhdistää automaattiset tarkistukset ja manuaalisen arvioinnin. Käyttöliittymätestien suunnitelma on lisätty valmiiksi, mutta niitä ei voi vielä suorittaa varsinaiselle sovellukselle, koska selainkäyttöliittymää ei ole toteutettu.
+Testaus yhdistää automaattiset tarkistukset ja manuaalisen arvioinnin. Selainkäyttöliittymän ensimmäinen selainpohjainen demo on julkaistu. Käyttöliittymätestien suunnitelma on valmis, mutta Playwright-automaatiotestit sekä ruudunlukija- ja muut manuaaliset testit on vielä kytkettävä toteutettuun käyttöliittymään.
 
 Automaattinen tarkistus auttaa löytämään ongelmia, mutta se ei yksin todista verkkosivun olevan täysin saavutettava tai WCAG-standardin mukainen.

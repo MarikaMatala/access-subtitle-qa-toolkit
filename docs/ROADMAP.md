@@ -44,6 +44,7 @@ Last reviewed: 2026-11-07
 - [x] Review WebVTT-specific features and add parsing support/tests for cue identifiers, cue settings, NOTE, STYLE and REGION blocks. Cue settings are preserved, not yet semantically validated.
 - [x] Add WebVTT timestamp and malformed-block regression fixtures (6 tests pass locally); broader SRT/browser-parser fixtures remain planned.
 - [x] Clarify in Finnish and English that the 42-character line threshold is a heuristic, not a universal subtitle standard.
+- [x] Run all 11 focused subtitle-overlap and WebVTT parser regression tests locally; all passed.
 - [ ] Add automated regression tests for the browser parser and validator.
 
 ## Phase 3 — Browser demo: HTML accessibility checks

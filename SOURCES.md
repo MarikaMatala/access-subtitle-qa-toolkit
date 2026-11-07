@@ -79,3 +79,27 @@ Any third-party dependency must be recorded with its version, purpose, upstream 
 See [the bilingual reference library](docs/REFERENCE_LIBRARY.md) for source descriptions, scope notes, metadata requirements and project interpretation rules. See [inclusive service design](docs/INCLUSIVE_SERVICE_DESIGN.md), [usability and UI design](docs/USABILITY_AND_UI.md), and the [testing toolkit](docs/TESTING_TOOLKIT.md) for practical implementation guidance.
 
 **Source review date / Lähteiden tarkistuspäivä:** 2026-11-07. Verify live legal texts, standard editions, harmonisation status and tool documentation before relying on them for a release.
+
+
+## International and country-specific legal frameworks
+- UN Convention on the Rights of Persons with Disabilities: https://www.ohchr.org/en/instruments-mechanisms/instruments/convention-rights-persons-disabilities
+- W3C international accessibility laws and policies database: https://www.w3.org/WAI/policies/
+- European Commission — Web Accessibility Directive: https://digital-strategy.ec.europa.eu/en/policies/web-accessibility
+- European Commission — EN 301 549 harmonisation: https://digital-strategy.ec.europa.eu/en/policies/web-accessibility-directive-standards-and-harmonisation
+- AccessibleEU — EN 301 549 v4.1.1 update (2026-09-07): https://accessible-eu-centre.ec.europa.eu/content-corner/news/european-accessibility-standard-en-301-549-has-been-updated-2026-09-07_en
+- UK — Public Sector Bodies Accessibility Regulations: https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps
+- UK — Equality Act 2010: https://www.legislation.gov.uk/ukpga/2010/15/contents
+- US — ADA web accessibility guidance: https://www.ada.gov/resources/web-guidance/
+- US — 2024 ADA Title II web rule: https://www.ada.gov/resources/2024-03-08-web-rule/
+- US — Section 508 laws and policies: https://www.section508.gov/manage/laws-and-policies/
+- Canada — Accessible Canada Act: https://laws-lois.justice.gc.ca/eng/acts/A-0.6/
+- Canada — CAN/ASC-EN 301 549:2024: https://accessible.canada.ca/standards-and-technical-guides/standards-and-technical-guides-database/can-asc-en-301-5492024-accessibility-requirements-ict-products-and-services-en-301-5492021-idt
+- Australia — Disability Discrimination Act 1992: https://www.legislation.gov.au/C2004A04426/latest
+- Australia — AHRC digital accessibility guidance: https://humanrights.gov.au/resource-hub/by-resource-type/guidelines-and-standards/guides-and-standards-disability-rights/guidelines-equal-access-digital-goods-and-services
+- Germany — BITV 2.0: https://www.gesetze-im-internet.de/bitv_2_0/
+- Germany — BFSG: https://www.gesetze-im-internet.de/bfsg/
+- Japan — Government Web Accessibility Policy (JIS X 8341-3): https://www.gov-online.go.jp/webaccessibility/
+
+See [International Accessibility Laws and Standards Comparison](docs/INTERNATIONAL_COMPARISON.md) for jurisdiction scope, standards differences, legal-status distinctions and the proposed rule data model.
+
+**Source review date / Lähteiden tarkistuspäivä:** 2026-11-07. Country-specific rules change; confirm the current official text and enforcement guidance before relying on them.

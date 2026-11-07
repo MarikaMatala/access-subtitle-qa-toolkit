@@ -17,7 +17,9 @@ The static browser interface is published on GitHub Pages:
 
 **https://marikamatala.github.io/access-subtitle-qa-toolkit/**
 
-The public demo is deployed automatically with GitHub Actions whenever the browser interface files are updated.\n\nThe demo currently includes:
+The public demo is deployed automatically with GitHub Actions whenever the browser interface files are updated.
+
+The demo currently includes:
 - HTML checks for a missing page title, document language, image alternative text, skipped heading levels, form labels, and accessible names on links and buttons.
 - SRT / WebVTT checks for cue structure, timestamp validity, ordering, overlaps, empty cues, long lines, and basic timing statistics.
 - Built-in examples, local file selection, downloadable text reports, and English / Finnish interface language.

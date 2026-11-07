@@ -58,9 +58,9 @@
             <div class="input-actions"><button class="button button-outline" id="html-example" type="button" data-i18n="loadHtmlExample">Load example</button><button class="button button-primary" id="run-html" type="button" data-i18n="runAudit">Run HTML check <span aria-hidden="true">→</span></button></div>
           </div>
           <div class="results-card" aria-labelledby="html-results-title">
-            <div class="results-heading"><div><p class="eyebrow" data-i18n="reportLabel">ANALYSIS REPORT</p><h4 id="html-results-title" data-i18n="htmlResultsTitle">Your findings</h4></div><span class="result-state" id="html-state" data-i18n="awaitingInput">AWAITING INPUT</span></div>
+            <div class="results-heading"><div><p class="eyebrow" data-i18n="reportLabel">ANALYSIS REPORT</p><h4 id="html-results-title" data-i18n="htmlResultsTitle">Your findings</h4></div><span class="result-state" id="html-state" role="status" aria-live="polite" aria-atomic="true" data-i18n="awaitingInput">AWAITING INPUT</span></div>
             <div class="empty-state" id="html-empty"><span class="empty-symbol" aria-hidden="true">⌕</span><strong data-i18n="emptyTitle">Nothing to report yet</strong><p data-i18n="emptyText">Add HTML and run the check to see findings here.</p></div>
-            <div class="report-content" id="html-report" hidden></div>
+            <div class="report-content" id="html-report" aria-live="polite" hidden></div>
           </div>
         </div>
       </section>
@@ -76,9 +76,9 @@
             <div class="input-actions"><button class="button button-outline" id="subtitle-example" type="button" data-i18n="loadSubtitleExample">Load example</button><button class="button button-primary" id="run-subtitles" type="button" data-i18n="validateSubtitles">Validate subtitles <span aria-hidden="true">→</span></button></div>
           </div>
           <div class="results-card" aria-labelledby="subtitle-results-title">
-            <div class="results-heading"><div><p class="eyebrow" data-i18n="reportLabel">ANALYSIS REPORT</p><h4 id="subtitle-results-title" data-i18n="subtitleResultsTitle">Validation results</h4></div><span class="result-state" id="subtitle-state" data-i18n="awaitingInput">AWAITING INPUT</span></div>
+            <div class="results-heading"><div><p class="eyebrow" data-i18n="reportLabel">ANALYSIS REPORT</p><h4 id="subtitle-results-title" data-i18n="subtitleResultsTitle">Validation results</h4></div><span class="result-state" id="subtitle-state" role="status" aria-live="polite" aria-atomic="true" data-i18n="awaitingInput">AWAITING INPUT</span></div>
             <div class="empty-state" id="subtitle-empty"><span class="empty-symbol" aria-hidden="true">◷</span><strong data-i18n="emptyTitle">Nothing to report yet</strong><p data-i18n="subtitleEmptyText">Add a subtitle file or paste text to inspect its timing and structure.</p></div>
-            <div class="report-content" id="subtitle-report" hidden></div>
+            <div class="report-content" id="subtitle-report" aria-live="polite" hidden></div>
           </div>
         </div>
       </section>

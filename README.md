@@ -9,8 +9,22 @@ An open-source toolkit for checking web accessibility and subtitle file quality.
 
 Automated checks can identify common issues, but cannot prove that a website is fully accessible or WCAG-conformant.
 
+## Browser demo
+
+The static browser interface is published with GitHub Pages:
+
+**https://marikamatala.github.io/access-subtitle-qa-toolkit/**
+
+The demo currently includes:
+- HTML checks for a missing page title, document language, image alternative text, skipped heading levels, form labels, and accessible names on links and buttons.
+- SRT / WebVTT checks for cue structure, timestamp validity, ordering, overlaps, empty cues, long lines, and basic timing statistics.
+- Built-in examples, local file selection, downloadable text reports, and English / Finnish interface language.
+- Local-only processing: pasted source and selected subtitle files are processed in the browser and are not uploaded.
+
+The browser implementation is a lightweight JavaScript demonstration. It does **not** execute the PHP CLI auditor or a production Java subtitle engine, and its rules are not a complete WCAG audit.
+
 ## Status
-**Early development — PHP command-line auditor and test documentation.** The browser interface has not yet been implemented. The UI test plan describes the checks that must be run when the interface is built.
+**Early development.** The PHP command-line auditor is available as a separate module. The browser interface is a separate client-side demo; the Java subtitle module and database remain planned development work. The UI test plan describes further functional and accessibility testing still required.
 
 ## Technology
 
@@ -36,6 +50,7 @@ The project combines automated regression tests with manual keyboard, magnificat
 - subtitle-toolkit/ — Java subtitle validation
 - database/ — SQL schema and migrations
 - docs/ — project, accessibility, and UI test documentation
+- index.html, styles.css, app.js — static browser demo
 - tests/ — regression tests and synthetic test resources
 - .github/workflows/ — CI workflows
 
@@ -67,6 +82,8 @@ The project combines automated regression tests with manual keyboard, magnificat
 - Include tests and reproducible setup instructions.
 
 ## Documentation
+
+- [Open the browser demo](https://marikamatala.github.io/access-subtitle-qa-toolkit/)
 - [Roadmap](docs/ROADMAP.md)
 - [Inclusive accessibility test plan](docs/ACCESSIBILITY_TEST_PLAN.md)
 - [Accessibility, usability and inclusion reference library (EN/FI)](docs/REFERENCE_LIBRARY.md)

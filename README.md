@@ -11,11 +11,11 @@ Automated checks can identify common issues, but cannot prove that a website is 
 
 ## Browser demo
 
-The static browser interface is published with GitHub Pages:
+The static browser interface is prepared for GitHub Pages deployment:
 
 **https://marikamatala.github.io/access-subtitle-qa-toolkit/**
 
-The demo currently includes:
+The intended public URL is shown below. To publish it, enable **Settings → Pages → Build and deployment → Source: GitHub Actions** in the repository; the included workflow then deploys the site automatically.\n\nThe demo currently includes:
 - HTML checks for a missing page title, document language, image alternative text, skipped heading levels, form labels, and accessible names on links and buttons.
 - SRT / WebVTT checks for cue structure, timestamp validity, ordering, overlaps, empty cues, long lines, and basic timing statistics.
 - Built-in examples, local file selection, downloadable text reports, and English / Finnish interface language.

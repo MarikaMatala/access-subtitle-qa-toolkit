@@ -105,6 +105,7 @@ Last reviewed: 2026-11-07
 
 - [x] Build the first semantic, responsive browser demo.
 - [x] Add accessible result summaries and status announcements.
+- [x] Reorganize the homepage around first-time visitor needs: explain the purpose, show a three-step quick start, put the working tools before detailed project background, and move limitations and project details below the tools.
 - [x] Add downloadable text report export.
 - [x] Add Finnish and English interface text.
 - [ ] Add Playwright functional and keyboard tests.

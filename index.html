@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111313">
+  <meta name="description" content="A browser-based demo for checking selected HTML accessibility issues and validating SRT and WebVTT subtitle files.">
+  <title>Access &amp; Subtitle QA Toolkit</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Access and Subtitle QA Toolkit home"><span class="brand-mark" aria-hidden="true">A<span>+</span></span><span class="brand-name">ACCESS<span>&amp; SUBTITLE</span><small>QUALITY ASSURANCE TOOLKIT</small></span></a>
+    <nav class="header-actions" aria-label="Main navigation">
+      <a href="#tools" data-i18n="navTools">Tools</a>
+      <a href="https://github.com/MarikaMatala/access-subtitle-qa-toolkit" target="_blank" rel="noopener noreferrer" data-i18n="navSource">Source code ↗</a>
+      <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch language to Finnish">FI</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span><span data-i18n="eyebrow">OPEN-SOURCE QUALITY ASSURANCE DEMO</span></p>
+        <h1 data-i18n="heroTitle">Make digital content<br><em>work for everyone.</em></h1>
+        <p class="hero-lead" data-i18n="heroLead">A practical toolkit for reviewing common HTML accessibility issues and checking subtitle file structure — directly in your browser.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#tools" data-i18n="startChecking">Start checking <span aria-hidden="true">↓</span></a><a class="button button-quiet" href="https://github.com/MarikaMatala/access-subtitle-qa-toolkit" target="_blank" rel="noopener noreferrer" data-i18n="viewRepository">View repository ↗</a></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-core"><span>QA</span><small>ACCESS<br>FOR ALL</small></div><span class="art-tag tag-a">WCAG 2.2 AA</span><span class="art-tag tag-b">SRT / VTT</span><span class="art-tag tag-c">HTML</span></div>
+    </section>
+
+    <section class="trust-strip" aria-label="Demo principles">
+      <div><span class="strip-icon" aria-hidden="true">⌁</span><span data-i18n="localOnly">Local processing</span><small data-i18n="localOnlySub">Your files stay in this browser</small></div>
+      <div><span class="strip-icon" aria-hidden="true">◎</span><span data-i18n="humanReview">Human review matters</span><small data-i18n="humanReviewSub">Automated checks are not certification</small></div>
+      <div><span class="strip-icon" aria-hidden="true">◇</span><span data-i18n="openSource">Open source</span><small data-i18n="openSourceSub">Inspect the code and project roadmap</small></div>
+    </section>
+
+    <section class="tools-section" id="tools">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="workspaceLabel">THE QA WORKSPACE</p>
+        <h2 data-i18n="workspaceTitle">Choose what to <em>inspect.</em></h2>
+        <p data-i18n="workspaceLead">Select a tool, provide sample content or choose one of the built-in examples, then review the findings.</p>
+      </div>
+      <div class="tool-tabs" role="tablist" aria-label="Quality assurance tools">
+        <button class="tool-tab is-active" id="tab-html" role="tab" aria-selected="true" aria-controls="panel-html" tabindex="0" type="button"><span class="tab-number">01</span><span><strong data-i18n="htmlTab">HTML accessibility</strong><small data-i18n="htmlTabSub">Markup checks</small></span></button>
+        <button class="tool-tab" id="tab-subtitles" role="tab" aria-selected="false" aria-controls="panel-subtitles" tabindex="-1" type="button"><span class="tab-number">02</span><span><strong data-i18n="subtitleTab">Subtitle validation</strong><small data-i18n="subtitleTabSub">SRT &amp; WebVTT</small></span></button>
+      </div>
+
+      <section class="tool-panel" id="panel-html" role="tabpanel" aria-labelledby="tab-html">
+        <div class="panel-intro"><div><p class="eyebrow">01 / HTML AUDITOR</p><h3 data-i18n="htmlHeading">Review your <em>markup.</em></h3><p data-i18n="htmlDescription">Paste an HTML fragment or document. The demo checks for a selected set of common accessibility signals.</p></div><span class="panel-badge">WCAG-INSPIRED</span></div>
+        <div class="workspace-grid">
+          <div class="input-card">
+            <div class="card-topline"><label for="html-input" data-i18n="htmlInputLabel">HTML source</label><span data-i18n="browserOnly">PROCESSED IN BROWSER</span></div>
+            <textarea id="html-input" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="html-help" placeholder="<!doctype html>…"></textarea>
+            <p class="field-help" id="html-help" data-i18n="htmlHelp">Paste source code here. No content is uploaded to a server.</p>
+            <div class="input-actions"><button class="button button-outline" id="html-example" type="button" data-i18n="loadHtmlExample">Load example</button><button class="button button-primary" id="run-html" type="button" data-i18n="runAudit">Run HTML check <span aria-hidden="true">→</span></button></div>
+          </div>
+          <div class="results-card" aria-labelledby="html-results-title">
+            <div class="results-heading"><div><p class="eyebrow" data-i18n="reportLabel">ANALYSIS REPORT</p><h4 id="html-results-title" data-i18n="htmlResultsTitle">Your findings</h4></div><span class="result-state" id="html-state" data-i18n="awaitingInput">AWAITING INPUT</span></div>
+            <div class="empty-state" id="html-empty"><span class="empty-symbol" aria-hidden="true">⌕</span><strong data-i18n="emptyTitle">Nothing to report yet</strong><p data-i18n="emptyText">Add HTML and run the check to see findings here.</p></div>
+            <div class="report-content" id="html-report" hidden></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tool-panel" id="panel-subtitles" role="tabpanel" aria-labelledby="tab-subtitles" hidden>
+        <div class="panel-intro"><div><p class="eyebrow">02 / SUBTITLE TOOLKIT</p><h3 data-i18n="subtitleHeading">Check the <em>timing.</em></h3><p data-i18n="subtitleDescription">Paste subtitle text or select an SRT / WebVTT file. The browser demo checks cue structure, timestamps, ordering, overlaps and line length.</p></div><span class="panel-badge">SRT · WEBVTT</span></div>
+        <div class="workspace-grid">
+          <div class="input-card">
+            <div class="card-topline"><label for="subtitle-input" data-i18n="subtitleInputLabel">Subtitle content</label><span data-i18n="browserOnly">PROCESSED IN BROWSER</span></div>
+            <textarea id="subtitle-input" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="subtitle-help" placeholder="WEBVTT&#10;&#10;00:00:01.000 --> 00:00:03.500&#10;Your subtitle text…"></textarea>
+            <div class="file-row"><label class="file-picker" for="subtitle-file"><span aria-hidden="true">＋</span><span data-i18n="chooseFile">Choose .srt or .vtt file</span></label><input id="subtitle-file" type="file" accept=".srt,.vtt,text/vtt,application/x-subrip" aria-describedby="subtitle-help"><span id="file-name" class="file-name" data-i18n="noFile">No file selected</span></div>
+            <p class="field-help" id="subtitle-help" data-i18n="subtitleHelp">Maximum file size: 2 MB. The original file is never changed.</p>
+            <div class="input-actions"><button class="button button-outline" id="subtitle-example" type="button" data-i18n="loadSubtitleExample">Load example</button><button class="button button-primary" id="run-subtitles" type="button" data-i18n="validateSubtitles">Validate subtitles <span aria-hidden="true">→</span></button></div>
+          </div>
+          <div class="results-card" aria-labelledby="subtitle-results-title">
+            <div class="results-heading"><div><p class="eyebrow" data-i18n="reportLabel">ANALYSIS REPORT</p><h4 id="subtitle-results-title" data-i18n="subtitleResultsTitle">Validation results</h4></div><span class="result-state" id="subtitle-state" data-i18n="awaitingInput">AWAITING INPUT</span></div>
+            <div class="empty-state" id="subtitle-empty"><span class="empty-symbol" aria-hidden="true">◷</span><strong data-i18n="emptyTitle">Nothing to report yet</strong><p data-i18n="subtitleEmptyText">Add a subtitle file or paste text to inspect its timing and structure.</p></div>
+            <div class="report-content" id="subtitle-report" hidden></div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="method-section">
+      <div class="method-copy"><p class="eyebrow" data-i18n="methodLabel">HOW TO READ THE RESULTS</p><h2 data-i18n="methodTitle">A useful signal.<br><em>Not the whole story.</em></h2><p data-i18n="methodText">Automated checks can reveal patterns and potential defects, but accessibility depends on context and real user experience. Treat every result as a prompt for review, not a final verdict.</p></div>
+      <div class="severity-list">
+        <div><span class="severity-mark error-mark"></span><div><strong data-i18n="errorLabel">Error</strong><p data-i18n="errorText">A likely issue that should be investigated and corrected.</p></div></div>
+        <div><span class="severity-mark warning-mark"></span><div><strong data-i18n="warningLabel">Warning</strong><p data-i18n="warningText">A possible usability or quality concern that needs context.</p></div></div>
+        <div><span class="severity-mark info-mark"></span><div><strong data-i18n="infoLabel">Info</strong><p data-i18n="infoText">A useful statistic or observation, not necessarily a defect.</p></div></div>
+      </div>
+    </section>
+
+    <section class="limitations">
+      <div class="limitation-icon" aria-hidden="true">!</div><div><h2 data-i18n="limitationsTitle">Know the limitations</h2><p data-i18n="limitationsText">This is an early browser-based demonstration. Its JavaScript checks are a separate, lightweight implementation; they do not execute the repository's PHP command-line auditor or a production Java subtitle engine. It does not calculate full WCAG conformance, inspect rendered colour contrast, or replace keyboard, screen-reader and user testing. Do not use the output as a legal compliance certificate.</p></div>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">A<span>+</span></span><span class="brand-name">ACCESS<span>&amp; SUBTITLE</span><small>QUALITY ASSURANCE TOOLKIT</small></span></a><p data-i18n="footerNote">An open-source learning and quality assurance project.</p><div><a href="https://github.com/MarikaMatala/access-subtitle-qa-toolkit" target="_blank" rel="noopener noreferrer" data-i18n="githubLink">GitHub repository ↗</a><span>© 2026</span></div></footer>
+</body>
+</html>

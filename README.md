@@ -10,7 +10,7 @@ An open-source toolkit for checking web accessibility and subtitle file quality.
 Automated checks can identify common issues, but cannot prove that a website is fully accessible or WCAG-conformant.
 
 ## Status
-**Early development — repository scaffold.** The first versions will process local HTML and subtitle files. Remote URL scanning and persistent scan history will be added only after the basic workflows and security controls are in place.
+**Early development — PHP command-line auditor and test documentation.** The browser interface has not yet been implemented. The UI test plan describes the checks that must be run when the interface is built.
 
 ## Technology
 
@@ -22,14 +22,21 @@ Automated checks can identify common issues, but cannot prove that a website is 
 | Web structure | HTML |
 | Styling | CSS |
 | Browser interactions | JavaScript |
+| Planned browser testing | Playwright + axe-core |
 | Automation | GitHub Actions |
+
+## Accessibility commitment
+
+The target baseline is WCAG 2.2 Level AA. Testing considers blindness and screen-reader use, low vision and eye conditions, color-vision differences, dyslexia and other reading differences, cognitive accessibility, motor access, hearing, and motion / photosensitivity.
+
+The project combines automated regression tests with manual keyboard, magnification, contrast, screen-reader, text-spacing, reduced-motion, and responsive checks. Automated scans are not a substitute for manual evaluation or testing with people with lived experience.
 
 ## Repository structure
 - accessibility-auditor/ — PHP accessibility checks
 - subtitle-toolkit/ — Java subtitle validation
 - database/ — SQL schema and migrations
-- docs/ — project and technical documentation
-- tests/ — synthetic test resources
+- docs/ — project, accessibility, and UI test documentation
+- tests/ — regression tests and synthetic test resources
 - .github/workflows/ — CI workflows
 
 ## Planned capabilities
@@ -40,7 +47,7 @@ Automated checks can identify common issues, but cannot prove that a website is 
 - Check document title and language declarations.
 - Inspect heading structure.
 - Detect form controls without accessible labels.
-- Identify empty links and buttons.
+- Identify links and buttons without detectable accessible names.
 - Produce a report with findings and remediation hints.
 
 ### Subtitle Toolkit
@@ -61,6 +68,9 @@ Automated checks can identify common issues, but cannot prove that a website is 
 
 ## Documentation
 - [Roadmap](docs/ROADMAP.md)
+- [Inclusive accessibility test plan](docs/ACCESSIBILITY_TEST_PLAN.md)
+- [User interface test plan](docs/UI_TEST_PLAN.md)
+- [Accessibility regression testing](tests/ACCESSIBILITY_TESTING.md)
 - [Security policy](SECURITY.md)
 - [Sources and references](SOURCES.md)
 - [Accessibility Auditor](accessibility-auditor/README.md)
@@ -71,13 +81,15 @@ Automated checks can identify common issues, but cannot prove that a website is 
 
 # Suomeksi
 
-Access & Subtitle QA Toolkit on avoimen lähdekoodin projekti, jonka tarkoituksena on tarkistaa verkkosivujen saavutettavuutta ja tekstitystiedostojen teknistä laatua.
+Access & Subtitle QA Toolkit on avoimen lähdekoodin projekti, jolla tarkistetaan verkkosivujen saavutettavuutta ja tekstitystiedostojen teknistä laatua.
 
 Projekti sisältää kaksi erillistä työkalua:
 - **Accessibility Auditor** tarkistaa HTML-sisällöstä yleisiä saavutettavuusongelmia.
 - **Subtitle Toolkit** tarkistaa SRT- ja WebVTT-tekstitystiedostojen rakennetta ja ajoituksia.
 - **SQL-tietokanta** mahdollistaa myöhemmin tarkistushistorian ja tulosten tallentamisen.
 
-Projekti on alkuvaiheessa. Ensimmäiseksi toteutetaan paikallisen HTML-sisällön ja tekstitystiedostojen tarkistukset. Verkkosivujen URL-tarkistus ja tietojen pysyvä tallennus lisätään vasta, kun perustyökalut ja niiden tietoturva ovat kunnossa.
+Saavutettavuuden tavoitteena on WCAG 2.2 AA. Testauksessa huomioidaan muun muassa sokeus, heikkonäköisyys ja silmäsairaudet, värinäön poikkeamat, lukivaikeus, kognitiiviset haasteet, motoriset rajoitteet sekä ruudunlukijoiden ja muiden avustavien teknologioiden käyttö.
+
+Testaus yhdistää automaattiset tarkistukset ja manuaalisen arvioinnin. Käyttöliittymätestien suunnitelma on lisätty valmiiksi, mutta niitä ei voi vielä suorittaa varsinaiselle sovellukselle, koska selainkäyttöliittymää ei ole toteutettu.
 
 Automaattinen tarkistus auttaa löytämään ongelmia, mutta se ei yksin todista verkkosivun olevan täysin saavutettava tai WCAG-standardin mukainen.

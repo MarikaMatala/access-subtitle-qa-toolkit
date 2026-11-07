@@ -47,7 +47,8 @@ Last reviewed: 2026-11-07
 - [x] Add WebVTT timestamp and malformed-block regression fixtures (6 tests pass locally); broader SRT/browser-parser fixtures remain planned.
 - [x] Clarify in Finnish and English that the 42-character line threshold is a heuristic, not a universal subtitle standard.
 - [x] Run all 11 focused subtitle-overlap and WebVTT parser regression tests locally; all passed.
-- [~] Add automated regression tests for the browser parser and validator (SRT parsing is being extracted into a testable module; WebVTT and overlap tests already exist).
+- [x] Add automated regression tests for the browser subtitle parsers (SRT, WebVTT) and overlap detector; the CI workflow runs the tests successfully.
+- [ ] Add automated regression tests for the HTML validator rules.
 
 ## Phase 3 — Browser demo: HTML accessibility checks
 
@@ -57,7 +58,7 @@ Last reviewed: 2026-11-07
 - [x] Check heading-level jumps.
 - [x] Check form controls for detectable labels.
 - [x] Check links and buttons for detectable accessible names.
-- [ ] Validate language values, not only the presence of a lang attribute.
+- [~] Validate the document lang value for well-formed BCP 47 syntax; automated tests are being added.
 - [ ] Improve accessible-name calculation and ARIA reference validation.
 - [ ] Add fixtures for labels, fieldsets, hidden text, SVGs, image links and ARIA naming.
 - [ ] Review false positives and false negatives in each rule.

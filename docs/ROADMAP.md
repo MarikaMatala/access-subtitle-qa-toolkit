@@ -47,7 +47,7 @@ Last reviewed: 2026-11-07
 - [x] Add WebVTT timestamp and malformed-block regression fixtures (6 tests pass locally); broader SRT/browser-parser fixtures remain planned.
 - [x] Clarify in Finnish and English that the 42-character line threshold is a heuristic, not a universal subtitle standard.
 - [x] Run all 11 focused subtitle-overlap and WebVTT parser regression tests locally; all passed.
-- [ ] Add automated regression tests for the browser parser and validator.
+- [~] Add automated regression tests for the browser parser and validator (SRT parsing is being extracted into a testable module; WebVTT and overlap tests already exist).
 
 ## Phase 3 — Browser demo: HTML accessibility checks
 

@@ -15,6 +15,7 @@
     <a class="brand" href="#top" aria-label="Access and Subtitle QA Toolkit home"><span class="brand-mark" aria-hidden="true">A<span>+</span></span><span class="brand-name">ACCESS<span>&amp; SUBTITLE</span><small>QUALITY ASSURANCE TOOLKIT</small></span></a>
     <nav class="header-actions" aria-label="Main navigation">
       <a href="#tools" data-i18n="navTools">Tools</a>
+      <a href="#about" data-i18n="navAbout">About</a>
       <a href="https://github.com/MarikaMatala/access-subtitle-qa-toolkit" target="_blank" rel="noopener noreferrer" data-i18n="navSource">Source code ↗</a>
       <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch language to Finnish">FI</button>
     </nav>
@@ -27,6 +28,13 @@
         <h1 data-i18n="heroTitle">Make digital content<br><em>work for everyone.</em></h1>
         <p class="hero-lead" data-i18n="heroLead">A practical toolkit for reviewing common HTML accessibility issues and checking subtitle file structure — directly in your browser.</p>
         <div class="hero-actions"><a class="button button-primary" href="#tools" data-i18n="startChecking">Start checking <span aria-hidden="true">↓</span></a><a class="button button-quiet" href="https://github.com/MarikaMatala/access-subtitle-qa-toolkit" target="_blank" rel="noopener noreferrer" data-i18n="viewRepository">View repository ↗</a></div>
+        <div class="project-teaser">
+          <p data-i18n="teaserText">An independent open-source project created by Marika Matalamäki to explore practical accessibility and subtitle quality checks.</p>
+          <details class="expand-details">
+            <summary><span class="expand-icon" aria-hidden="true">+</span><span data-i18n="teaserMore">Read a little more</span></summary>
+            <p data-i18n="teaserExtra">The project brings two quality-assurance topics into one learning-focused toolkit. Try the browser demo with sample content, inspect the source code, and use the findings as a starting point for human review — not as a compliance certificate.</p>
+          </details>
+        </div>
       </div>
       <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-core"><span>QA</span><small>ACCESS<br>FOR ALL</small></div><span class="art-tag tag-a">WCAG 2.2 AA</span><span class="art-tag tag-b">SRT / VTT</span><span class="art-tag tag-c">HTML</span></div>
     </section>
@@ -35,6 +43,24 @@
       <div><span class="strip-icon" aria-hidden="true">⌁</span><span data-i18n="localOnly">Local processing</span><small data-i18n="localOnlySub">Your files stay in this browser</small></div>
       <div><span class="strip-icon" aria-hidden="true">◎</span><span data-i18n="humanReview">Human review matters</span><small data-i18n="humanReviewSub">Automated checks are not certification</small></div>
       <div><span class="strip-icon" aria-hidden="true">◇</span><span data-i18n="openSource">Open source</span><small data-i18n="openSourceSub">Inspect the code and project roadmap</small></div>
+    </section>
+
+
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="about-heading">
+        <p class="eyebrow" data-i18n="aboutLabel">PROJECT INFORMATION</p>
+        <h2 id="about-title" data-i18n="aboutTitle">About the <em>project.</em></h2>
+        <p data-i18n="aboutIntro">Who created this toolkit, why it exists, and how you can use or build on it.</p>
+      </div>
+      <div class="about-grid">
+        <article class="about-card"><span class="about-index">01</span><h3 data-i18n="creatorTitle">Creator &amp; origin</h3><p data-i18n="creatorText">The original idea, project concept and direction are by Marika Matalamäki. This is an independent portfolio and learning project developed to bring web accessibility checks and subtitle quality assurance together.</p></article>
+        <article class="about-card"><span class="about-index">02</span><h3 data-i18n="purposeTitle">Why it was made</h3><p data-i18n="purposeText">The goal is to make selected technical checks easier to explore, explain common quality issues, and encourage inclusive digital services. Accessibility is broader than automated rules: real users, context and manual evaluation matter.</p></article>
+        <article class="about-card"><span class="about-index">03</span><h3 data-i18n="useTitle">How to use it</h3><p data-i18n="useText">Choose an HTML or subtitle tool, paste sample content or select an SRT/VTT file, and review the report. Browser-demo inputs are processed locally and are not uploaded. Do not enter confidential or personal data into a public demo.</p></article>
+        <article class="about-card"><span class="about-index">04</span><h3 data-i18n="licenseTitle">Open source &amp; reuse</h3><p data-i18n="licenseText">The repository is published under the MIT License. You may use, copy, modify and distribute the licensed software, provided you retain the copyright and permission notice. The original project idea and direction remain credited to Marika Matalamäki; see the LICENSE file for the full terms.</p></article>
+        <article class="about-card"><span class="about-index">05</span><h3 data-i18n="contributeTitle">Contributions</h3><p data-i18n="contributeText">You can explore the source, report issues or propose improvements through GitHub. Please preserve existing license notices, clearly identify your own changes, and credit the original project when presenting a fork or derivative.</p><a class="about-link" href="https://github.com/MarikaMatala/access-subtitle-qa-toolkit" target="_blank" rel="noopener noreferrer" data-i18n="contributeLink">Open repository and contribution options ↗</a></article>
+        <article class="about-card"><span class="about-index">06</span><h3 data-i18n="statusTitle">Current scope</h3><p data-i18n="statusText">The published browser version is an early demonstration with selected JavaScript checks. The PHP command-line auditor is a separate module; the Java subtitle engine and database are planned work. This demo is not a complete WCAG audit or certification.</p></article>
+      </div>
+      <p class="about-license-note" data-i18n="licenseNote">License: MIT · Copyright © 2026 Marika Matalamäki. Third-party materials, if added later, remain subject to their own terms.</p>
     </section>
 
     <section class="tools-section" id="tools">
@@ -97,6 +123,6 @@
       <div class="limitation-icon" aria-hidden="true">!</div><div><h2 data-i18n="limitationsTitle">Know the limitations</h2><p data-i18n="limitationsText">This is an early browser-based demonstration. Its JavaScript checks are a separate, lightweight implementation; they do not execute the repository's PHP command-line auditor or a production Java subtitle engine. It does not calculate full WCAG conformance, inspect rendered colour contrast, or replace keyboard, screen-reader and user testing. Do not use the output as a legal compliance certificate.</p></div>
     </section>
   </main>
-  <footer class="site-footer"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">A<span>+</span></span><span class="brand-name">ACCESS<span>&amp; SUBTITLE</span><small>QUALITY ASSURANCE TOOLKIT</small></span></a><p data-i18n="footerNote">An open-source learning and quality assurance project.</p><div><a href="https://github.com/MarikaMatala/access-subtitle-qa-toolkit" target="_blank" rel="noopener noreferrer" data-i18n="githubLink">GitHub repository ↗</a><span>© 2026</span></div></footer>
+  <footer class="site-footer"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">A<span>+</span></span><span class="brand-name">ACCESS<span>&amp; SUBTITLE</span><small>QUALITY ASSURANCE TOOLKIT</small></span></a><p data-i18n="footerNote">An open-source learning and quality assurance project.</p><div class="footer-meta"><a href="https://github.com/MarikaMatala/access-subtitle-qa-toolkit" target="_blank" rel="noopener noreferrer" data-i18n="githubLink">GitHub repository ↗</a><span>© 2026 Marika Matalamäki</span><span data-i18n="footerLicense">Open source · MIT License · Original concept by Marika Matalamäki</span></div></footer>
 </body>
 </html>

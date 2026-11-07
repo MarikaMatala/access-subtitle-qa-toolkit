@@ -10,6 +10,7 @@ on:
       - 'subtitle-overlap.js'
       - 'subtitle-vtt.js'
       - 'subtitle-srt.js'
+      - 'language-tag.js'
       - 'tests/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:

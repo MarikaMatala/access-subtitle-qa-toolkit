@@ -1,0 +1,193 @@
+<?php
+
+declare(strict_types=1);
+
+namespace AccessAudit;
+
+use DOMDocument;
+use DOMElement;
+use DOMXPath;
+use LibXMLError;
+
+final class HtmlAuditor
+{
+    /** @return list<AuditFinding> */
+    public function audit(string $html): array
+    {
+        $document = new DOMDocument('1.0', 'UTF-8');
+        $previousSetting = libxml_use_internal_errors(true);
+
+        try {
+            $document->loadHTML(
+                '<?xml encoding="UTF-8">' . $html,
+                LIBXML_NONET | LIBXML_NOERROR | LIBXML_NOWARNING
+            );
+        } finally {
+            libxml_clear_errors();
+            libxml_use_internal_errors($previousSetting);
+        }
+
+        $xpath = new DOMXPath($document);
+        $findings = [];
+
+        $title = trim($xpath->evaluate('string(//title)'));
+        if ($title === '') {
+            $findings[] = new AuditFinding(
+                'page-title-missing',
+                'error',
+                'The document does not have a non-empty page title.',
+                'title',
+                '2.4.2',
+                'Add a concise, descriptive title inside the head element.'
+            );
+        }
+
+        $htmlElement = $xpath->query('/html')->item(0);
+        if (!$htmlElement instanceof DOMElement || trim($htmlElement->getAttribute('lang')) === '') {
+            $findings[] = new AuditFinding(
+                'document-language-missing',
+                'error',
+                'The document language is not declared.',
+                'html',
+                '3.1.1',
+                'Add a valid language attribute, for example lang="en" or lang="fi".'
+            );
+        }
+
+        foreach ($xpath->query('//img') as $image) {
+            if (!$image instanceof DOMElement) {
+                continue;
+            }
+
+            if (!$image->hasAttribute('alt')) {
+                $findings[] = new AuditFinding(
+                    'image-alt-missing',
+                    'error',
+                    'An image is missing its alt attribute.',
+                    $this->describeElement($image),
+                    '1.1.1',
+                    'Add alternative text, or alt="" when the image is purely decorative.'
+                );
+            }
+        }
+
+        $previousHeadingLevel = 0;
+        foreach ($xpath->query('//h1 | //h2 | //h3 | //h4 | //h5 | //h6') as $heading) {
+            if (!$heading instanceof DOMElement) {
+                continue;
+            }
+
+            $level = (int) substr(strtolower($heading->tagName), 1);
+            if ($previousHeadingLevel > 0 && $level > $previousHeadingLevel + 1) {
+                $findings[] = new AuditFinding(
+                    'heading-level-skipped',
+                    'warning',
+                    sprintf('Heading level jumps from h%d to h%d.', $previousHeadingLevel, $level),
+                    $this->describeElement($heading),
+                    '1.3.1',
+                    'Review the heading outline and use levels that reflect the content hierarchy.'
+                );
+            }
+
+            $previousHeadingLevel = $level;
+        }
+
+        foreach ($xpath->query('//input[not(translate(@type, "HIDDEN", "hidden") = "hidden")] | //select | //textarea') as $control) {
+            if (!$control instanceof DOMElement || $this->hasAccessibleLabel($control, $xpath)) {
+                continue;
+            }
+
+            $findings[] = new AuditFinding(
+                'form-control-label-missing',
+                'error',
+                'A form control does not have a detectable accessible label.',
+                $this->describeElement($control),
+                '3.3.2',
+                'Associate the control with a label, or provide an appropriate aria-label or aria-labelledby.'
+            );
+        }
+
+        foreach ($xpath->query('//a | //button') as $interactive) {
+            if (!$interactive instanceof DOMElement) {
+                continue;
+            }
+
+            $text = trim($interactive->textContent);
+            $hasName = $text !== ''
+                || trim($interactive->getAttribute('aria-label')) !== ''
+                || trim($interactive->getAttribute('aria-labelledby')) !== ''
+                || trim($interactive->getAttribute('title')) !== '';
+
+            if (!$hasName) {
+                $findings[] = new AuditFinding(
+                    'interactive-name-missing',
+                    'error',
+                    'A link or button has no detectable text or naming attribute.',
+                    $this->describeElement($interactive),
+                    '4.1.2',
+                    'Provide a meaningful accessible name, such as visible text or aria-label.'
+                );
+            }
+        }
+
+        return $findings;
+    }
+
+    private function hasAccessibleLabel(DOMElement $control, DOMXPath $xpath): bool
+    {
+        if (trim($control->getAttribute('aria-label')) !== ''
+            || trim($control->getAttribute('aria-labelledby')) !== '') {
+            return true;
+        }
+
+        $id = $control->getAttribute('id');
+        if ($id !== '') {
+            $labels = $xpath->query('//label[@for=' . $this->xpathLiteral($id) . ']');
+            if ($labels !== null && $labels->length > 0) {
+                return true;
+            }
+        }
+
+        $parent = $control->parentNode;
+        while ($parent instanceof DOMElement) {
+            if (strtolower($parent->tagName) === 'label') {
+                return true;
+            }
+            $parent = $parent->parentNode;
+        }
+
+        return false;
+    }
+
+    private function describeElement(DOMElement $element): string
+    {
+        $description = strtolower($element->tagName);
+        if ($element->hasAttribute('id')) {
+            $description .= '#' . $element->getAttribute('id');
+        }
+        if ($element->hasAttribute('class')) {
+            $classes = preg_split('/\\s+/', trim($element->getAttribute('class')));
+            if ($classes !== false && $classes !== []) {
+                $description .= '.' . implode('.', array_slice($classes, 0, 3));
+            }
+        }
+
+        return $description;
+    }
+
+    private function xpathLiteral(string $value): string
+    {
+        if (!str_contains($value, "'")) {
+            return "'" . $value . "'";
+        }
+        if (!str_contains($value, '"')) {
+            return '"' . $value . '"';
+        }
+
+        $parts = explode("'", $value);
+        return 'concat(' . implode(', "'", ', array_map(
+            static fn (string $part): string => "'" . $part . "'",
+            $parts
+        )) . ')';
+    }
+}

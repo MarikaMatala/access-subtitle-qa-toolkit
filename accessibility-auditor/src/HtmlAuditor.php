@@ -102,25 +102,18 @@ final class HtmlAuditor
         }
 
         foreach ($xpath->query('//a | //button') as $interactive) {
-            if (!$interactive instanceof DOMElement) {
+            if (!$interactive instanceof DOMElement || $this->hasAccessibleName($interactive, $xpath)) {
                 continue;
             }
 
-            $hasName = trim($interactive->textContent) !== ''
-                || trim($interactive->getAttribute('aria-label')) !== ''
-                || trim($interactive->getAttribute('aria-labelledby')) !== ''
-                || trim($interactive->getAttribute('title')) !== '';
-
-            if (!$hasName) {
-                $findings[] = new AuditFinding(
-                    'interactive-name-missing',
-                    'error',
-                    'A link or button has no detectable text or naming attribute.',
-                    $this->describeElement($interactive),
-                    '4.1.2',
-                    'Provide a meaningful accessible name, such as visible text or aria-label.'
-                );
-            }
+            $findings[] = new AuditFinding(
+                'interactive-name-missing',
+                'error',
+                'A link or button has no detectable accessible name.',
+                $this->describeElement($interactive),
+                '4.1.2',
+                'Provide a meaningful accessible name, such as visible text, an image alternative, or a valid ARIA name.'
+            );
         }
 
         return $findings;
@@ -129,7 +122,7 @@ final class HtmlAuditor
     private function hasAccessibleLabel(DOMElement $control, DOMXPath $xpath): bool
     {
         if (trim($control->getAttribute('aria-label')) !== ''
-            || trim($control->getAttribute('aria-labelledby')) !== '') {
+            || $this->hasValidIdReferences($control->getAttribute('aria-labelledby'), $xpath)) {
             return true;
         }
 
@@ -151,6 +144,53 @@ final class HtmlAuditor
         }
 
         return false;
+    }
+
+    private function hasAccessibleName(DOMElement $element, DOMXPath $xpath): bool
+    {
+        if (trim($element->textContent) !== ''
+            || trim($element->getAttribute('aria-label')) !== ''
+            || trim($element->getAttribute('title')) !== ''
+            || $this->hasValidIdReferences($element->getAttribute('aria-labelledby'), $xpath)) {
+            return true;
+        }
+
+        foreach ($xpath->query('.//img[@alt]', $element) as $image) {
+            if ($image instanceof DOMElement && trim($image->getAttribute('alt')) !== '') {
+                return true;
+            }
+        }
+
+        foreach ($xpath->query('.//svg/title', $element) as $title) {
+            if (trim($title->textContent) !== '') {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private function hasValidIdReferences(string $references, DOMXPath $xpath): bool
+    {
+        $ids = preg_split('/\\s+/', trim($references));
+        if ($ids === false || $ids === [] || $ids[0] === '') {
+            return false;
+        }
+
+        foreach ($ids as $id) {
+            $found = false;
+            foreach ($xpath->query('//*[@id]') as $node) {
+                if ($node instanceof DOMElement && $node->getAttribute('id') === $id) {
+                    $found = true;
+                    break;
+                }
+            }
+            if (!$found) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private function describeElement(DOMElement $element): string

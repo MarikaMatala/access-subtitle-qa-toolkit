@@ -2,7 +2,15 @@
 
 ## Current status
 
-The repository currently has a command-line PHP auditor and no finished browser interface. This plan defines the test approach for the web UI before it is implemented. Browser tests must be connected to the actual app URL and real controls before being marked as passing.
+The repository contains a published, client-side browser demo alongside the PHP command-line auditor. The demo currently provides HTML accessibility checks and SRT / WebVTT subtitle validation. This plan defines the functional, responsive and accessibility test approach for that interface. Browser tests must target the live demo and real controls before being marked as passing.
+
+**Live demo:** https://marikamatala.github.io/access-subtitle-qa-toolkit/
+
+The demo is an early-stage implementation. Do not describe it as a complete WCAG audit or production-ready subtitle engine.
+
+## Test status
+
+The interface has been implemented and deployed, but this document is a test plan, not a test report. No Playwright, axe-core, NVDA, VoiceOver or TalkBack result should be treated as passed until it has actually been executed and recorded with a date, build SHA, browser and assistive-technology details.
 
 ## Planned test stack
 

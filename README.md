@@ -2,6 +2,12 @@
 
 An open-source toolkit for checking web accessibility and subtitle file quality.
 
+## Project origin, authorship and license
+
+The original project idea, concept and direction are by **Marika Matalamäki**. This is an independent portfolio and learning project. The repository is open source under the **MIT License**; reuse, modification and redistribution of the licensed software are permitted under the license terms, including retention of the copyright and permission notice. Please credit the original project concept when presenting forks or derivative work. See [LICENSE](LICENSE) for the full legal terms.
+
+The published browser demo processes pasted HTML and selected subtitle files locally in the browser. Do not submit confidential or personal data to a public demo. Automated findings are indicative and require human review.
+
 ## Modules
 - **Accessibility Auditor:** PHP-based checks for selected accessibility issues in supplied HTML.
 - **Subtitle Toolkit:** Java-based validator and analyzer for SRT and WebVTT subtitle files.

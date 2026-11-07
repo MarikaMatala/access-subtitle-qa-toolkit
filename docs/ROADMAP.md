@@ -16,7 +16,9 @@ Last reviewed: 2026-11-07
 - [x] Fix subtitle overlap detection in the browser demo so a cue is checked against all earlier cues that may still be active, not only the immediately preceding cue.
 - [x] Add regression tests for nested and multiple subtitle overlaps (5 Node.js tests pass locally).
 - [x] Verify that the GitHub Pages build and deployment workflow completed successfully for the latest browser-demo changes.
+- [x] Include both standalone subtitle parser scripts in the Pages deployment path filters.
 - [ ] Open the live demo and confirm in a browser that the deployed page loads the updated overlap detector and behaves correctly.
+- [x] Fix the GitHub Pages workflow path filters so changes to `subtitle-overlap.js` and `subtitle-vtt.js` trigger a deployment.
 
 ## Phase 1 — Repository foundation
 

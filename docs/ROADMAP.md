@@ -5,6 +5,7 @@
 - [x] Define license and security guidance.
 - [x] Add inclusive accessibility test plan.
 - [x] Add UI test plan and regression strategy.
+- [x] Add bilingual accessibility, usability, inclusion and testing reference documentation.
 - [ ] Add contribution guidelines.
 
 ## Phase 2 — Accessibility Auditor (PHP)

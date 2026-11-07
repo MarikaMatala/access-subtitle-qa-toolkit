@@ -38,9 +38,9 @@
 - [ ] Add integration tests.
 
 ## Phase 5 — User interface and testing
-- [ ] Build a semantic, responsive interface.
-- [ ] Add accessible result summaries and filters.
-- [ ] Add report export.
+- [x] Build the first semantic, responsive browser demo.
+- [x] Add accessible result summaries and status announcements.
+- [x] Add downloadable text report export.
 - [ ] Add Playwright functional and keyboard tests.
 - [ ] Add axe-core automated scans for pages and dynamic states.
 - [ ] Perform manual NVDA, VoiceOver, and TalkBack checks.
@@ -62,4 +62,4 @@
 
 ## Current UI testing limitation
 
-The browser UI does not exist yet. The test plan is ready, but Playwright and assistive-technology tests must be connected to the real interface before any UI test can be reported as passing.
+The first browser UI is implemented and published on GitHub Pages. It is a lightweight JavaScript demo, separate from the PHP CLI auditor and the planned Java subtitle engine. The test plan is ready, but Playwright / axe-core and assistive-technology tests must still be run against the live interface before any UI test can be reported as passing.

@@ -41,9 +41,9 @@ Last reviewed: 2026-11-07
 - [x] Fix overlap detection to compare each cue with every earlier cue whose end time is after the current cue's start time.
 - [x] Add tests for one long cue overlapping several later cues.
 - [x] Add tests for multiple simultaneous overlaps and out-of-order cues.
-- [ ] Review WebVTT-specific features, including cue identifiers, settings, NOTE, STYLE and REGION blocks.
-- [ ] Review timestamp parsing and malformed-block handling with additional fixtures.
-- [ ] Clarify that the 42-character line threshold is a heuristic, not a universal subtitle standard.
+- [x] Review WebVTT-specific features and add parsing support/tests for cue identifiers, cue settings, NOTE, STYLE and REGION blocks. Cue settings are preserved, not yet semantically validated.
+- [x] Add WebVTT timestamp and malformed-block regression fixtures (6 tests pass locally); broader SRT/browser-parser fixtures remain planned.
+- [x] Clarify in Finnish and English that the 42-character line threshold is a heuristic, not a universal subtitle standard.
 - [ ] Add automated regression tests for the browser parser and validator.
 
 ## Phase 3 — Browser demo: HTML accessibility checks

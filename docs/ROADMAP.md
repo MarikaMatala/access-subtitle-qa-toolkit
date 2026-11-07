@@ -58,7 +58,7 @@ Last reviewed: 2026-11-07
 - [x] Check heading-level jumps.
 - [x] Check form controls for detectable labels.
 - [x] Check links and buttons for detectable accessible names.
-- [~] Validate the document lang value for well-formed BCP 47 syntax; automated tests are being added.
+- [x] Validate the document lang value for well-formed BCP 47 syntax using Intl.getCanonicalLocales; regression tests pass in GitHub Actions. This is syntax validation only and does not confirm that the tag matches the page content or is registered.
 - [ ] Improve accessible-name calculation and ARIA reference validation.
 - [ ] Add fixtures for labels, fieldsets, hidden text, SVGs, image links and ARIA naming.
 - [ ] Review false positives and false negatives in each rule.

@@ -13,8 +13,8 @@ Last reviewed: 2026-11-07
 
 ## Current focus
 
-- [ ] Fix subtitle overlap detection in the browser demo so a cue is checked against all earlier cues that may still be active, not only the immediately preceding cue.
-- [ ] Add regression examples for nested and multiple subtitle overlaps.
+- [x] Fix subtitle overlap detection in the browser demo so a cue is checked against all earlier cues that may still be active, not only the immediately preceding cue.
+- [x] Add regression tests for nested and multiple subtitle overlaps (5 Node.js tests pass locally).
 - [ ] Verify the latest GitHub Pages deployment and confirm that the live demo matches the current main-branch files.
 
 ## Phase 1 — Repository foundation

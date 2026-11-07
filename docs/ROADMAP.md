@@ -15,7 +15,8 @@ Last reviewed: 2026-11-07
 
 - [x] Fix subtitle overlap detection in the browser demo so a cue is checked against all earlier cues that may still be active, not only the immediately preceding cue.
 - [x] Add regression tests for nested and multiple subtitle overlaps (5 Node.js tests pass locally).
-- [ ] Verify the latest GitHub Pages deployment and confirm that the live demo matches the current main-branch files.
+- [x] Verify that the GitHub Pages build and deployment workflow completed successfully for the latest browser-demo changes.
+- [ ] Open the live demo and confirm in a browser that the deployed page loads the updated overlap detector and behaves correctly.
 
 ## Phase 1 — Repository foundation
 
@@ -37,9 +38,9 @@ Last reviewed: 2026-11-07
 - [x] Check long subtitle lines.
 - [x] Report cue count, overlaps and average duration.
 - [x] Add example subtitle content and downloadable reports.
-- [ ] Fix overlap detection to compare each cue with every earlier cue whose end time is after the current cue's start time.
-- [ ] Add tests for one long cue overlapping several later cues.
-- [ ] Add tests for multiple simultaneous overlaps and out-of-order cues.
+- [x] Fix overlap detection to compare each cue with every earlier cue whose end time is after the current cue's start time.
+- [x] Add tests for one long cue overlapping several later cues.
+- [x] Add tests for multiple simultaneous overlaps and out-of-order cues.
 - [ ] Review WebVTT-specific features, including cue identifiers, settings, NOTE, STYLE and REGION blocks.
 - [ ] Review timestamp parsing and malformed-block handling with additional fixtures.
 - [ ] Clarify that the 42-character line threshold is a heuristic, not a universal subtitle standard.

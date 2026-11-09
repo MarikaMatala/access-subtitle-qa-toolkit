@@ -64,3 +64,5 @@ test("reports exact overlap duration in milliseconds", () => {
 
   assert.equal(overlaps[0].duration, 1500);
 });
+
+// TOIMINTO-OSIO PÄÄTTYY: cue. Seuraava osio alkaa seuraavasta toiminnosta tai tiedoston päättymisestä.

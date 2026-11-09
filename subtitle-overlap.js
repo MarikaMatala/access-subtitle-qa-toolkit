@@ -1,6 +1,6 @@
-// KOMMENTOINTIOHJE / CODE MAP
-// Tiedoston tarkoitus: Tekstitysrivien päällekkäisyyksien ja aikaleikkojen ristiriitojen tarkistus.
-// Rakenne: asetukset ja tietorakenteet ensin, käsittelyfunktiot seuraavaksi, tapahtumat tai testit lopuksi.
+// CODE MAP / COMMENTING GUIDE
+// File purpose: Checks for overlapping subtitle cues and timestamp conflicts.
+// Structure: settings and data structures first, followed by processing functions, then events or tests.
 
 /* Detect every positive-duration overlap between subtitle cues.
  * Cues use millisecond start/end values and retain their original cue index.

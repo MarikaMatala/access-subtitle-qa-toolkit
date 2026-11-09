@@ -1,5 +1,11 @@
 <!doctype html>
+<!--
+  KOMMENTOINTIOHJE / CODE MAP
+  Tiedoston tarkoitus: Työkalupaketin pääsivu: saavutettavuustyökalujen ja tekstitystyökalujen käyttöliittymä.
+  HEAD = metatiedot ja resurssit; BODY = sivun sisältö ja työkalujen käyttöliittymä.
+-->
 <html lang="en">
+<!-- HEAD-OSIO ALKAA. -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +19,8 @@
   <script src="language-tag.js" defer></script>
   <script src="app.js" defer></script>
 </head>
+<!-- HEAD-OSIO PÄÄTTYY. -->
+<!-- BODY-OSIO ALKAA. -->
 <body>
   <a class="skip-link" href="#main" data-i18n="skipToMain">Skip to main content</a>
   <header class="site-header">
@@ -28,7 +36,8 @@
     </nav>
   </header>
 
-  <main id="main">
+  <!-- PÄÄSISÄLTÖ ALKAA. -->
+<main id="main">
     <section class="hero" id="top">
       <div class="hero-copy">
         <p class="eyebrow"><span class="status-dot"></span><span data-i18n="eyebrow">OPEN-SOURCE QUALITY ASSURANCE DEMO</span></p>
@@ -157,7 +166,9 @@
 
 as a legal compliance certificate.</p></div>
     </section>
-  </main>
+  <!-- PÄÄSISÄLTÖ PÄÄTTYY. -->
+</main>
   <footer class="site-footer"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">A<span>+</span></span><span class="brand-name">ACCESS<span>&amp; SUBTITLE</span><small>QUALITY ASSURANCE TOOLKIT</small></span></a><p data-i18n="footerNote">An open-source learning and quality assurance project.</p><div class="footer-meta"><a href="https://github.com/MarikaMatala/access-subtitle-qa-toolkit/blob/main/README.md" target="_blank" rel="noopener noreferrer" data-i18n="footerReadme">Project guide ↗</a><a href="https://github.com/MarikaMatala/access-subtitle-qa-toolkit/blob/main/docs/ROADMAP.md" target="_blank" rel="noopener noreferrer" data-i18n="footerRoadmap">Roadmap ↗</a><a href="https://github.com/MarikaMatala/access-subtitle-qa-toolkit/blob/main/docs/PHOTOSENSITIVITY-MIGRAINE-ACCESSIBILITY.md" target="_blank" rel="noopener noreferrer" data-i18n="footerAccessibility">Accessibility guidance ↗</a><a href="https://github.com/MarikaMatala/access-subtitle-qa-toolkit/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" data-i18n="footerSecurity">Security ↗</a><a href="https://github.com/MarikaMatala/access-subtitle-qa-toolkit" target="_blank" rel="noopener noreferrer" data-i18n="githubLink">GitHub repository ↗</a><span>© 2026 Marika Matalamäki</span><span data-i18n="footerLicense">Open source · MIT License · Original concept by Marika Matalamäki</span></div></footer>
+<!-- BODY-OSIO PÄÄTTYY. -->
 </body>
 </html>

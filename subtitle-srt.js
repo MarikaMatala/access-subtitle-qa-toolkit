@@ -1,3 +1,7 @@
+// KOMMENTOINTIOHJE / CODE MAP
+// Tiedoston tarkoitus: SRT-tekstitystiedostojen jäsentäminen ja validointi.
+// Rakenne: asetukset ja tietorakenteet ensin, käsittelyfunktiot seuraavaksi, tapahtumat tai testit lopuksi.
+
 /* Focused SRT block parser shared by the browser demo and Node.js regression tests. */
 (function (root) {
   function subtitleTimeMs(value) {

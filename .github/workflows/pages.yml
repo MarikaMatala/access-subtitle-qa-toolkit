@@ -1,11 +1,11 @@
-# KOMMENTOINTIOHJE / CODE MAP
-# Tiedoston tarkoitus: GitHub Actions -työnkulku, joka tarkistaa ja julkaisee GitHub Pages -sivuston.
-# Rakenne: triggerit määrittävät käynnistymishetken; jobs ja steps määrittävät suoritettavat vaiheet.
+# CODE MAP / COMMENTING GUIDE
+# File purpose: GitHub Actions -työnkulku, joka tarkistaa ja julkaisee GitHub Pages -sivuston.
+# Structure: triggers define when the workflow runs; jobs and steps define the work to execute.
 
 name: Deploy browser demo to GitHub Pages
 
 on:
-# TYÖVAIHEEN MÄÄRITYS: tarkista tämän osion nimi ja sen sisällä olevat step-vaiheet.
+# JOB DEFINITION: check the job name and the steps listed within it.
   push:
     branches: [main]
     paths:
@@ -18,25 +18,25 @@ on:
       - 'language-tag.js'
       - 'tests/**'
       - '.github/workflows/pages.yml'
-# TYÖVAIHEEN MÄÄRITYS: tarkista tämän osion nimi ja sen sisällä olevat step-vaiheet.
+# JOB DEFINITION: check the job name and the steps listed within it.
   workflow_dispatch:
 
 permissions:
-# TYÖVAIHEEN MÄÄRITYS: tarkista tämän osion nimi ja sen sisällä olevat step-vaiheet.
+# JOB DEFINITION: check the job name and the steps listed within it.
   contents: read
-# TYÖVAIHEEN MÄÄRITYS: tarkista tämän osion nimi ja sen sisällä olevat step-vaiheet.
+# JOB DEFINITION: check the job name and the steps listed within it.
   pages: write
-# TYÖVAIHEEN MÄÄRITYS: tarkista tämän osion nimi ja sen sisällä olevat step-vaiheet.
+# JOB DEFINITION: check the job name and the steps listed within it.
   id-token: write
 
 concurrency:
-# TYÖVAIHEEN MÄÄRITYS: tarkista tämän osion nimi ja sen sisällä olevat step-vaiheet.
+# JOB DEFINITION: check the job name and the steps listed within it.
   group: pages
-# TYÖVAIHEEN MÄÄRITYS: tarkista tämän osion nimi ja sen sisällä olevat step-vaiheet.
+# JOB DEFINITION: check the job name and the steps listed within it.
   cancel-in-progress: true
 
 jobs:
-# TYÖVAIHEEN MÄÄRITYS: tarkista tämän osion nimi ja sen sisällä olevat step-vaiheet.
+# JOB DEFINITION: check the job name and the steps listed within it.
   build:
     runs-on: ubuntu-latest
     steps:
@@ -54,7 +54,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
-# TYÖVAIHEEN MÄÄRITYS: tarkista tämän osion nimi ja sen sisällä olevat step-vaiheet.
+# JOB DEFINITION: check the job name and the steps listed within it.
   deploy:
     environment:
       name: github-pages

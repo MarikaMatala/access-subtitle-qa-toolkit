@@ -1,6 +1,6 @@
-// KOMMENTOINTIOHJE / CODE MAP
-// Tiedoston tarkoitus: Testit tekstitysrivien aikaleikkojen päällekkäisyyksien tunnistamiselle.
-// Rakenne: testien apufunktiot ja testidata ensin, yksittäiset testitapaukset seuraavaksi.
+// CODE MAP / COMMENTING GUIDE
+// File purpose: Tests for detecting overlapping subtitle cue timestamps.
+// Structure: test helpers and fixtures first, followed by individual test cases.
 
 const test = require("node:test");
 const assert = require("node:assert/strict");
@@ -8,7 +8,7 @@ const { detectSubtitleOverlaps } = require("../subtitle-overlap.js");
 
 const cue = (index, start, end) => ({ index, start, end });
 
-// TESTIOSIO ALKAA: seuraava tapaus tarkistaa yhden toiminnallisuuden.
+// TEST SECTION START: the following case checks one specific behavior.
 test("detects a long cue overlapping multiple later cues", () => {
   const overlaps = detectSubtitleOverlaps([
     cue(1, 1000, 10000),
@@ -22,7 +22,7 @@ test("detects a long cue overlapping multiple later cues", () => {
   ]);
 });
 
-// TESTIOSIO ALKAA: seuraava tapaus tarkistaa yhden toiminnallisuuden.
+// TEST SECTION START: the following case checks one specific behavior.
 test("detects nested and simultaneous overlaps", () => {
   const overlaps = detectSubtitleOverlaps([
     cue(1, 0, 10000),
@@ -34,7 +34,7 @@ test("detects nested and simultaneous overlaps", () => {
   assert.equal(overlaps.length, 6);
 });
 
-// TESTIOSIO ALKAA: seuraava tapaus tarkistaa yhden toiminnallisuuden.
+// TEST SECTION START: the following case checks one specific behavior.
 test("does not count cues that only touch at a boundary", () => {
   assert.equal(detectSubtitleOverlaps([
     cue(1, 0, 1000),
@@ -42,7 +42,7 @@ test("does not count cues that only touch at a boundary", () => {
   ]).length, 0);
 });
 
-// TESTIOSIO ALKAA: seuraava tapaus tarkistaa yhden toiminnallisuuden.
+// TEST SECTION START: the following case checks one specific behavior.
 test("finds overlaps even when input cues are out of chronological order", () => {
   const overlaps = detectSubtitleOverlaps([
     cue(1, 5000, 9000),
@@ -55,7 +55,7 @@ test("finds overlaps even when input cues are out of chronological order", () =>
   ]);
 });
 
-// TESTIOSIO ALKAA: seuraava tapaus tarkistaa yhden toiminnallisuuden.
+// TEST SECTION START: the following case checks one specific behavior.
 test("reports exact overlap duration in milliseconds", () => {
   const overlaps = detectSubtitleOverlaps([
     cue(1, 1000, 4500),
@@ -65,4 +65,4 @@ test("reports exact overlap duration in milliseconds", () => {
   assert.equal(overlaps[0].duration, 1500);
 });
 
-// TOIMINTO-OSIO PÄÄTTYY: cue. Seuraava osio alkaa seuraavasta toiminnosta tai tiedoston päättymisestä.
+// FUNCTION SECTION END: cue. The next section starts at the next function or at the end of the file.

@@ -1,3 +1,7 @@
+// KOMMENTOINTIOHJE / CODE MAP
+// Tiedoston tarkoitus: Kielen ja kielitunnisteiden tunnistaminen sekä validointi.
+// Rakenne: asetukset ja tietorakenteet ensin, käsittelyfunktiot seuraavaksi, tapahtumat tai testit lopuksi.
+
 /* Syntax-level validation for BCP 47 language tags.
  * Intl.getCanonicalLocales validates tag structure; it does not prove that
  * the tag matches the actual language of the page content.

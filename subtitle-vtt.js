@@ -1,3 +1,7 @@
+// KOMMENTOINTIOHJE / CODE MAP
+// Tiedoston tarkoitus: WebVTT-tekstitystiedostojen jäsentäminen ja validointi.
+// Rakenne: asetukset ja tietorakenteet ensin, käsittelyfunktiot seuraavaksi, tapahtumat tai testit lopuksi.
+
 /* Focused WebVTT block parser. SRT parsing remains in app.js. */
 (function (root) {
   function webVttTimeMs(value) {

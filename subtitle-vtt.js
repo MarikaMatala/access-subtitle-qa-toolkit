@@ -1,6 +1,6 @@
-// KOMMENTOINTIOHJE / CODE MAP
-// Tiedoston tarkoitus: WebVTT-tekstitystiedostojen jäsentäminen ja validointi.
-// Rakenne: asetukset ja tietorakenteet ensin, käsittelyfunktiot seuraavaksi, tapahtumat tai testit lopuksi.
+// CODE MAP / COMMENTING GUIDE
+// File purpose: Parsing and validation of WebVTT subtitle files.
+// Structure: settings and data structures first, followed by processing functions, then events or tests.
 
 /* Focused WebVTT block parser. SRT parsing remains in app.js. */
 (function (root) {

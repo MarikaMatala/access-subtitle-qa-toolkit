@@ -1,5 +1,5 @@
 # CODE MAP / COMMENTING GUIDE
-# File purpose: GitHub Actions -työnkulku PHP-pohjaisen saavutettavuusauditoijan tarkistuksiin.
+# File purpose: GitHub Actions workflow for checks on the PHP-based accessibility auditor.
 # Structure: triggers define when the workflow runs; jobs and steps define the work to execute.
 
 name: PHP Accessibility Auditor

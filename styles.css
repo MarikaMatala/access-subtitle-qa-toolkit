@@ -78,3 +78,5 @@
 @media(max-width:900px){.resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.header-actions{gap:12px}}
 /* RESPONSIIVINEN OSIO: mukauttaa asettelun pienemmille näytöille tai käyttäjän asetuksiin. */
 @media(max-width:520px){.resource-section{padding:44px 18px 50px}.resource-grid{grid-template-columns:1fr}.resource-card{min-height:155px}.resource-card strong{font-size:20px}}
+
+/* TIEDOSTON TYYLIOSIO PÄÄTTYY TÄHÄN. */

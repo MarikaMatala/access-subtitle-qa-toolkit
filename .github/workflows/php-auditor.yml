@@ -1,17 +1,25 @@
+# KOMMENTOINTIOHJE / CODE MAP
+# Tiedoston tarkoitus: GitHub Actions -työnkulku PHP-pohjaisen saavutettavuusauditoijan tarkistuksiin.
+# Rakenne: triggerit määrittävät käynnistymishetken; jobs ja steps määrittävät suoritettavat vaiheet.
+
 name: PHP Accessibility Auditor
 
 on:
+# TYÖVAIHEEN MÄÄRITYS: tarkista tämän osion nimi ja sen sisällä olevat step-vaiheet.
   push:
     paths:
       - "accessibility-auditor/**"
       - ".github/workflows/php-auditor.yml"
+# TYÖVAIHEEN MÄÄRITYS: tarkista tämän osion nimi ja sen sisällä olevat step-vaiheet.
   pull_request:
     paths:
       - "accessibility-auditor/**"
       - ".github/workflows/php-auditor.yml"
+# TYÖVAIHEEN MÄÄRITYS: tarkista tämän osion nimi ja sen sisällä olevat step-vaiheet.
   workflow_dispatch:
 
 jobs:
+# TYÖVAIHEEN MÄÄRITYS: tarkista tämän osion nimi ja sen sisällä olevat step-vaiheet.
   test:
     runs-on: ubuntu-latest
     steps:

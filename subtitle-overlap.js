@@ -1,3 +1,7 @@
+// KOMMENTOINTIOHJE / CODE MAP
+// Tiedoston tarkoitus: Tekstitysrivien päällekkäisyyksien ja aikaleikkojen ristiriitojen tarkistus.
+// Rakenne: asetukset ja tietorakenteet ensin, käsittelyfunktiot seuraavaksi, tapahtumat tai testit lopuksi.
+
 /* Detect every positive-duration overlap between subtitle cues.
  * Cues use millisecond start/end values and retain their original cue index.
  * The sweep-line approach avoids comparing cues that have already ended.

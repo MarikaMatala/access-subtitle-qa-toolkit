@@ -1,25 +1,25 @@
-// KOMMENTOINTIOHJE / CODE MAP
-// Tiedoston tarkoitus: Testit WebVTT-tekstitystiedostojen jäsentämiselle ja virhetilanteille.
-// Rakenne: testien apufunktiot ja testidata ensin, yksittäiset testitapaukset seuraavaksi.
+// CODE MAP / COMMENTING GUIDE
+// File purpose: Tests for parsing WebVTT subtitle files and handling invalid input.
+// Structure: test helpers and fixtures first, followed by individual test cases.
 
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const { webVttTimeMs, parseWebVttBlock } = require("../subtitle-vtt.js");
 
-// TESTIOSIO ALKAA: seuraava tapaus tarkistaa yhden toiminnallisuuden.
+// TEST SECTION START: the following case checks one specific behavior.
 test("parses WebVTT timestamps with and without an hour field", () => {
   assert.equal(webVttTimeMs("01:02.345"), 62345);
   assert.equal(webVttTimeMs("01:02:03.456"), 3723456);
 });
 
-// TESTIOSIO ALKAA: seuraava tapaus tarkistaa yhden toiminnallisuuden.
+// TEST SECTION START: the following case checks one specific behavior.
 test("rejects SRT comma timestamps and out-of-range minute or second values", () => {
   assert.equal(webVttTimeMs("00:01,000"), null);
   assert.equal(webVttTimeMs("60:00.000"), null);
   assert.equal(webVttTimeMs("00:60.000"), null);
 });
 
-// TESTIOSIO ALKAA: seuraava tapaus tarkistaa yhden toiminnallisuuden.
+// TEST SECTION START: the following case checks one specific behavior.
 test("preserves cue identifiers, text and cue settings", () => {
   const parsed = parseWebVttBlock(
     "intro-card\n00:00:01.000 --> 00:00:04.000 line:90% position:50% align:center\nHello world",
@@ -33,7 +33,7 @@ test("preserves cue identifiers, text and cue settings", () => {
   assert.equal(parsed.cue.index, 7);
 });
 
-// TESTIOSIO ALKAA: seuraava tapaus tarkistaa yhden toiminnallisuuden.
+// TEST SECTION START: the following case checks one specific behavior.
 test("accepts cues without an identifier or settings", () => {
   const parsed = parseWebVttBlock("00:01.000 --> 00:02.000\nCaption", 1);
   assert.equal(parsed.type, "cue");
@@ -41,7 +41,7 @@ test("accepts cues without an identifier or settings", () => {
   assert.deepEqual(parsed.cue.settings, []);
 });
 
-// TESTIOSIO ALKAA: seuraava tapaus tarkistaa yhden toiminnallisuuden.
+// TEST SECTION START: the following case checks one specific behavior.
 test("ignores file headers, NOTE comments, STYLE and REGION blocks", () => {
   for (const block of [
     "WEBVTT\nKind: captions\nLanguage: en",
@@ -53,7 +53,7 @@ test("ignores file headers, NOTE comments, STYLE and REGION blocks", () => {
   }
 });
 
-// TESTIOSIO ALKAA: seuraava tapaus tarkistaa yhden toiminnallisuuden.
+// TEST SECTION START: the following case checks one specific behavior.
 test("reports malformed cue blocks and invalid timestamp order", () => {
   assert.equal(parseWebVttBlock("orphan text", 1).reason, "missing-timing");
   assert.equal(parseWebVttBlock("00:02.000 --> 00:01.000\nBad", 2).reason, "invalid-timestamp");

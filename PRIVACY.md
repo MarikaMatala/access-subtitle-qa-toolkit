@@ -12,7 +12,7 @@ Julkaistu selain-demo käsittelee liitetyn HTML-koodin ja valitut SRT- tai WebVT
 Projektin lähdekoodin ja dokumentaation ylläpitäjä on Marika Matalamäki. Tietosuojaa koskevat kysymykset voi lähettää osoitteeseen marika.matalamaki@gmail.com. Tämä yhteystieto ei tarkoita, että projekti keräisi kävijöiden henkilötietoja.
 
 ### Evästeet ja analytiikka
-Projektin ylläpitäjä ei lisää tähän projektiin omia mainos- tai seurant evästeitä eikä omaa analytiikkapalvelua, ellei yllä ole nimenomaisesti toisin kerrottu. GitHubin, GitHub Pagesin, hosting-palvelun ja ulkoisten palveluiden tekninen tietojenkäsittely määräytyy niiden omien tietosuojakäytäntöjen mukaan. Toiminnallisuuden tai palveluntarjoajien muuttuessa tämä dokumentti päivitetään.
+Projektin ylläpitäjä ei lisää tähän projektiin omia mainos- tai seurantaevästeitä eikä omaa analytiikkapalvelua, ellei yllä ole nimenomaisesti toisin kerrottu. GitHubin, GitHub Pagesin, hosting-palvelun ja ulkoisten palveluiden tekninen tietojenkäsittely määräytyy niiden omien tietosuojakäytäntöjen mukaan. Toiminnallisuuden tai palveluntarjoajien muuttuessa tämä dokumentti päivitetään.
 
 ### Rekisteröidyn oikeudet
 Voit ottaa ylläpitäjään yhteyttä, jos haluat tiedustella mahdollisia projektin ylläpitäjän hallussa olevia henkilötietoja. GitHubin omiin tietoihin liittyvät pyynnöt tulee osoittaa GitHubille.

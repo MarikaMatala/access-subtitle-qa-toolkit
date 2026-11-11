@@ -125,3 +125,13 @@ Saavutettavuuden tavoitteena on WCAG 2.2 AA. Testauksessa huomioidaan muun muass
 Testaus yhdistää automaattiset tarkistukset ja manuaalisen arvioinnin. Selainkäyttöliittymän ensimmäinen selainpohjainen demo on julkaistu. Käyttöliittymätestien suunnitelma on valmis, mutta Playwright-automaatiotestit sekä ruudunlukija- ja muut manuaaliset testit on vielä kytkettävä toteutettuun käyttöliittymään.
 
 Automaattinen tarkistus auttaa löytämään ongelmia, mutta se ei yksin todista verkkosivun olevan täysin saavutettava tai WCAG-standardin mukainen.
+
+
+---
+
+## Privacy, copyright and reuse | Tietosuoja, tekijänoikeudet ja käyttö
+
+- [Privacy and data handling / Tietosuoja ja tietojen käsittely](PRIVACY.md)
+- [Copyright and permitted use / Tekijänoikeudet ja materiaalin käyttö](COPYRIGHT.md)
+
+These documents describe this repository and its current project boundaries. They are informational notices, not general contract terms. / Nämä dokumentit kuvaavat tämän repositorion ja projektin nykyisiä toimintarajoja. Ne ovat informatiivisia selosteita, eivät yleisiä sopimusehtoja.
